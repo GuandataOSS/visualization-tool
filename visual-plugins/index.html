@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.css %>" />
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            (function (global) {
+                function GDPlugin() {
+                    return {
+                        init: function () {},
+                    };
+                }
+                global.GDPlugin = GDPlugin;
+            })(window);
+        </script>
+        <script src="<%= htmlWebpackPlugin.options.js %>"></script>
+    </body>
+</html>

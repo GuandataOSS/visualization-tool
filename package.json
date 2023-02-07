@@ -1,0 +1,39 @@
+{
+  "name": "visualization-tool",
+  "version": "1.0.0",
+  "description": "guandata plugin",
+  "main": "plugin.js",
+  "scripts": {
+    "vis": "babel-node package-visual-plugin/index.js",
+    "vis-config": "babel-node package-visual-plugin/genConfig.js",
+    "vis-init": "babel-node package-visual-plugin/init.js",
+    "dev": "node package-visual-plugin/shell.js",
+    "build": "yarn vis",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thanks",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/serve": "^1.6.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "html-minifier": "^4.0.0",
+    "html-webpack-plugin": "^4.4.1",
+    "insert-string-after": "^1.0.0",
+    "less": "^4.1.1",
+    "rollup": "^1.27.8",
+    "rollup-plugin-uglify": "^6.0.0",
+    "shelljs": "^0.8.4",
+    "terser": "^5.6.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^4.3.0",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0"
+  }
+}

@@ -1,0 +1,23 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+.idea
+.happypack
+.tern-project
+build
+build-home
+dll_build/dev
+node_modules
+ncp-debug.log
+npm-debug.log
+npm-debug.log.*
+*.DS_Store
+conf/*.json
+.vscode/
+coverage
+yarn-error.log
+stats.json
+package-lock.json
+*.DS_Store
+_test.js
+dist/

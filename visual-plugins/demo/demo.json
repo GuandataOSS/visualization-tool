@@ -1,0 +1,48 @@
+{
+    "version": "0.0.1",
+    "name": "demo图表",
+    "description": "展示数据，查询图表属性信息",
+    "chartConfigurations": [
+        {
+            "fieldName": "title.text",
+            "label": "标题",
+            "type": "STRING",
+            "placeholder": "请输入标题",
+            "model": {
+                "size": "small"
+            }
+        },
+        {
+            "fieldName": "startDay",
+            "label": "周起始日",
+            "type": "MODEL",
+            "model": {
+                "modelType": "SELECT",
+                "labels": [ "周一", "周日" ],
+                "values": [ 0, 1 ],
+                "size": "small"
+            },
+            "defaultValue": 0
+        },
+        {
+            "fieldName": "maxLineNumber",
+            "label": "最大行数",
+            "type": "NUMBER",
+            "defaultValue": 6,
+            "model": {
+                "size": "small"
+            }
+        },
+        {
+            "fieldName": "refreshEnabled",
+            "label": "开启刷新",
+            "type": "BOOLEAN",
+            "defaultValue": true,
+            "model": {
+                "size": "small"
+            }
+        }
+    ],
+    "author": "jameswhf@qq.com",
+    "comment": "面向测试和开发"
+}

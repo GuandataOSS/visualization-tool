@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [ "safari >= 9", "Chrome >= 70", "Edge >= 16",  "Firefox >= 60", "Android >= 6.0", "iOS >= 10" ]
+        }
+      }
+    ]
+  ],
+  "plugins": ["transform-runtime"]
+}
