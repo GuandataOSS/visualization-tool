@@ -42,8 +42,10 @@ function loadSingleFile({entirefileName, pluginPath}) {
                 less.render(contentString, {compress: true})
                     .then((res) => resolve({[keyName]: res.css}))
                     .catch((e) => reject(e))
+                break
             case 'html':
                 resolve({[keyName]: minify(contentString, {removeComments: true, collapseWhitespace: true, minifyJS:true, minifyCSS:true})})
+                break
             case 'json':
                 const jsonObject = Object.assign(defaultConfigs, JSON.parse(contentString))
                 resolve({[keyName]: JSON.stringify(jsonObject)})
@@ -52,6 +54,7 @@ function loadSingleFile({entirefileName, pluginPath}) {
             case 'jpeg':
                 resolve({[keyName]: `${imagePrefixMap[extension]}${new Buffer.from(content).toString('base64')}`})
                 break
+            default: resolve(null)
         }
     })
 }
@@ -64,6 +67,7 @@ function loadVisualPlugin(pluginName) {
         const tasks = entirefileNames.map((entirefileName) => loadSingleFile({entirefileName, pluginPath}))
         Promise.all(tasks)
         .then((result) => {
+            result = result.filter(v => v)
             const jsonConfig = result.find((r) => r.json) || {json: {}}
             const resultObj = result.reduce((r, v) => Object.assign(r, v))
             const content = Object.keys(resultObj)
